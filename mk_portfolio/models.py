@@ -1,3 +1,15 @@
 from django.db import models
 
 # Create your models here.
+class Job(models.Model):
+    Organisation = models.CharField(max_length=200)
+    Job_title = models.CharField(max_length=200)
+    years = models.CharField(max_length=200)
+
+class Project(models.Model):
+    Technology = models.CharField(max_length=200)
+    Title = models.CharField(max_length=200)
+    Description = models.CharField(max_length=500)
+
+class Skill(models.Model):
+    Technology = models.CharField(max_length=200)
