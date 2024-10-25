@@ -1,0 +1,50 @@
+.square-box{
+   height: 100px;
+   width: 650px;
+   border: 2px solid rgb(186, 181, 181);
+   background-color: white;
+   border-radius: 20px;
+}
+
+.image-border{
+    background-color: antiquewhite;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    height: 30px;
+}
+
+.img-indent{
+    height: 15px;
+    margin-left: 10px;
+}
+
+.typing-container {
+    margin-top: 15px;
+    padding-left: 9px;
+    font-family: sans-serif;
+    font-weight:600;
+    margin-left: 5px;
+}
+.input-cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background-color: rgb(105, 96, 96);
+}
+
+.align-row {
+    margin-top: 40px;
+    margin-left: 10px;
+}
+
+
+@keyframes blink {
+    0% {opacity: 1;}
+    40% {opacity: 1;}
+    60% {opacity: 0;}
+    100% {opacity: 0;}
+  }
+
+.input-cursor { 
+  animation: blink .6s linear infinite alternate;
+}
