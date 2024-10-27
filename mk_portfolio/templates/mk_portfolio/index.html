@@ -3,12 +3,14 @@
 <head>
     <link rel="stylesheet" href="{% static 'mk_portfolio/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'mk_portfolio/css/custom.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body style="background-image: url('/static/mk_portfolio/background.jpg');background-repeat: no-repeat; background-size: cover;height: 100vh;">
     <div class = "container-fluid">
-            <div class = "mt-4 d-flex justify-content-center fixed">
-                <div class="square-box">
+            <div class = "mt-4 d-flex justify-content-center">
+                <div class="square-box position-fixed">
                     <div class = "image-border">
                         <img class = "img-indent" src = "/static/mk_portfolio/close.png">
                         <img class = "img-indent" src = "/static/mk_portfolio/yellow.png">
@@ -19,6 +21,10 @@
                 </div>
             </div>
             </div>
+    <section class="section" id="section1">Section 1</section>
+    <section class="section" id="section2">Section 2</section>
+    <section class="section" id="section3">Section 3</section>
+    <section class="section" id="section4">Section 4</section>
     </div>
 </body>
 <script src="{% static 'mk_portfolio/js/jquery.min.js' %}"></script>

@@ -49,3 +49,22 @@
 .input-cursor { 
   animation: blink .6s linear infinite alternate;
 }
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+
+.section {
+    height: 100vh;              /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: white;
+  }
+
+#section1 { background-color: #ff5733; }
+#section2 { background-color: #33c9ff; }
+#section3 { background-color: #75ff33; }
+#section4 { background-color: #c833ff; }
