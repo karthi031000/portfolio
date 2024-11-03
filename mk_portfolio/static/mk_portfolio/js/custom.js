@@ -47,16 +47,31 @@ window.addEventListener("wheel", (event) => {
     event.preventDefault();
     $( document ).ready(async function() {
         deletesent("#sentence");
-        await waitforMS(250);
+        await waitforMS(275);
         scrollToSection(currentSectionIndex + 1);
         event.preventDefault();
         typesent(cmdlist[currentSectionIndex], "#sentence")
+        if(currentSectionIndex === 1){
+          await waitforMS(275)
+          document.addEventListener("DOMContentLoaded", () => {
+            let animation_fade = document.querySelectorAll("[id^='fadein-']");
+            animation_fade.forEach((element) => {
+              element.classList.add("event"); 
+            });
+          });
+          document.addEventListener("DOMContentLoaded", () => {
+            let pulseElements = document.querySelectorAll("[id^='pulse-']");
+            pulseElements.forEach((element) => {
+              element.classList.add("circle");
+            });
+          });
+        }
       });
   } else if (event.deltaY < 0 && currentSectionIndex > 0) {
     event.preventDefault();
     $( document ).ready(async function() {
         deletesent("#sentence");
-        await waitforMS(250);
+        await waitforMS(275);
         scrollToSection(currentSectionIndex - 1);
         event.preventDefault();
         typesent(cmdlist[currentSectionIndex], "#sentence")
@@ -94,3 +109,4 @@ window.addEventListener("keydown", (event) => {
   
     setTimeout(() => isScrolling = false, 800);
   });
+

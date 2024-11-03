@@ -20,12 +20,30 @@
                     <span class="input-cursor"></span></div>
                 </div>
             </div>
-            </div>
+            
     <section class="section" id="section1">Section 1</section>
-    <section class="section" id="section2">Section 2</section>
+    <section class="section" id="section2">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="content">
+              <ul class="timeline-1 text-black">
+                  {% for yr, org, title in grand %}
+                  <li id="fadein-{{ forloop.counter }}">
+                  <div id="pulse-{{ forloop.counter }}"></div>
+                  <h5 class="mb-3">{{ yr }}</h5>
+                  <h5 class="mb-3">{{ org }}</h5>
+                  <h5 class = "border-bottom border-primary mb-5 pb-3">{{ title }}</h5>
+                </li>
+                  {% endfor %}
+              </ul>
+              </div>
+          </div>
+          </div>
+      </div>
+    </section>
     <section class="section" id="section3">Section 3</section>
-    <section class="section" id="section4">Section 4</section>
-    </div>
+  </div>
 </body>
 <script src="{% static 'mk_portfolio/js/jquery.min.js' %}"></script>
 <script src="{% static 'mk_portfolio/js/bootstrap.min.js' %}"></script>
