@@ -29,8 +29,8 @@
             <div id="content">
               <ul class="timeline-1 text-black">
                   {% for yr, org, title in grand %}
-                  <li id="fadein-{{ forloop.counter }}">
-                  <div id="pulse-{{ forloop.counter }}"></div>
+                  <li class="event" id="fadein-{{ forloop.counter }}">
+                  <div class="circle" id="pulse-{{ forloop.counter }}"></div>
                   <h5 class="mb-3">{{ yr }}</h5>
                   <h5 class="mb-3">{{ org }}</h5>
                   <h5 class = "border-bottom border-primary mb-5 pb-3">{{ title }}</h5>

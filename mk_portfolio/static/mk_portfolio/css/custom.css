@@ -74,6 +74,7 @@ html, body {
 /* #section1 { background-color: #ff5733; } */
 .timeline-1 { 
   border-left: 3px solid #b565a7;
+  max-height: 450px;
   margin-top: 200px;
   background-color: white;
   border-bottom-right-radius: 4px;
@@ -93,6 +94,9 @@ html, body {
   position: relative;
   margin: 20px 0; 
   padding-left: 40px; 
+  opacity: 0;
+}
+.event-animation{
   animation: fadeInUp 0.5s forwards;
 }
  .circle {
@@ -104,6 +108,8 @@ html, body {
     background-color: #fff; 
     border: 3px solid #b565a7;
     border-radius: 50%;
+  }
+  .circle-animation {
     animation: pulse 1s infinite;
   }
 

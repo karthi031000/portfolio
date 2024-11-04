@@ -1,12 +1,26 @@
 let cmdlist = ["whoami", "history | grep jobs", "ls Projects", "unzip skills.zip"]
 
-async function typesent(text, elebyref, delay=30) {
+async function typesent(text, elebyref, currentSectionIndex, delay=30) {
     var letters = text.split("");
     var i = 0;
     while(i < letters.length){
         await waitforMS(delay);
         $(elebyref).append(letters[i]);
         i++
+    }
+    if(currentSectionIndex === 1){
+      console.log(currentSectionIndex)
+      console.log("done loading")
+      let animation_fade = document.querySelectorAll("[id^='fadein-']");
+      console.log(animation_fade);
+      animation_fade.forEach((element) => {
+          element.classList.add("event-animation"); 
+      });
+      let animation_pulse = document.querySelectorAll("[id^='pulse-']");
+      console.log(animation_pulse);
+      animation_pulse.forEach((element) => {
+          element.classList.add("circle-animation"); 
+      });
     }
     return;
 }
@@ -50,22 +64,7 @@ window.addEventListener("wheel", (event) => {
         await waitforMS(275);
         scrollToSection(currentSectionIndex + 1);
         event.preventDefault();
-        typesent(cmdlist[currentSectionIndex], "#sentence")
-        if(currentSectionIndex === 1){
-          await waitforMS(275)
-          document.addEventListener("DOMContentLoaded", () => {
-            let animation_fade = document.querySelectorAll("[id^='fadein-']");
-            animation_fade.forEach((element) => {
-              element.classList.add("event"); 
-            });
-          });
-          document.addEventListener("DOMContentLoaded", () => {
-            let pulseElements = document.querySelectorAll("[id^='pulse-']");
-            pulseElements.forEach((element) => {
-              element.classList.add("circle");
-            });
-          });
-        }
+        typesent(cmdlist[currentSectionIndex], "#sentence", currentSectionIndex)
       });
   } else if (event.deltaY < 0 && currentSectionIndex > 0) {
     event.preventDefault();
