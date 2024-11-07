@@ -2,7 +2,7 @@
    height: 100px;
    width: 650px;
    border: 2px solid rgb(186, 181, 181);
-   background-color: white;
+   background-color: rgb(232, 226, 226);
    border-radius: 20px;
    z-index: 1000;
    max-width: 90%;
@@ -10,8 +10,8 @@
 }
 
 .image-border{
-    border-bottom: 2px solid rgb(226, 176, 176);
-    background-color: antiquewhite;
+    border-bottom: 2px solid rgb(170, 157, 157);
+    background-color: rgb(86, 81, 81);
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
     height: 30px;
@@ -33,7 +33,7 @@
     display: inline-block;
     width: 10px;
     height: 20px;
-    background-color: rgb(235, 182, 182);
+    background-color: rgb(177, 163, 163);
 }
 
 .align-row {
@@ -70,16 +70,18 @@ html, body {
 
   
 
+#section1 { color: white; } 
 
-/* #section1 { background-color: #ff5733; } */
 .timeline-1 { 
-  border-left: 3px solid #b565a7;
+  border-left: 3px solid rgb(245, 243, 243);
   max-height: 450px;
   margin-top: 200px;
+  color: white;
+  font-family: sans-serif;
   background-color: white;
   border-bottom-right-radius: 4px;
   border-top-right-radius: 4px;
-  background: rgba(177, 99, 163, 0.09);
+  background: rgba(50, 48, 48, 0.159);
   margin: 0 auto;
   position: relative;
   padding: 50px;
@@ -105,8 +107,8 @@ html, body {
     top: 10px;
     width: 16px;
     height: 16px;
-    background-color: #fff; 
-    border: 3px solid #b565a7;
+    background-color: #636060; 
+    border: 3px solid rgb(255, 255, 255);
     border-radius: 50%;
   }
   .circle-animation {
@@ -129,8 +131,14 @@ html, body {
       transform: scale(1); 
   }
   50% {
-      transform: scale(1.1); 
+      transform: scale(1.4); 
   }
 }
 
-#section3 { background-color: #c833ff; }
+.org {
+  background-color: rgb(128, 120, 120);
+  justify-content: center;
+}
+
+
+#section3 {color: white; }
