@@ -1,4 +1,4 @@
-let cmdlist = ["whoami", "history | grep jobs", "ls Projects", "unzip skills.zip"]
+let cmdlist = ["whoami", "history | grep jobs", "ls certificates", "unzip skills.zip"]
 
 async function typesent(text, elebyref, currentSectionIndex, delay=30) {
     var letters = text.split("");
@@ -9,18 +9,20 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
         i++
     }
     if(currentSectionIndex === 1){
-      console.log(currentSectionIndex)
-      console.log("done loading")
       let animation_fade = document.querySelectorAll("[id^='fadein-']");
-      console.log(animation_fade);
       animation_fade.forEach((element) => {
           element.classList.add("event-animation"); 
       });
       let animation_pulse = document.querySelectorAll("[id^='pulse-']");
-      console.log(animation_pulse);
       animation_pulse.forEach((element) => {
           element.classList.add("circle-animation"); 
       });
+    }
+    else if (currentSectionIndex === 2){
+      let animation_pop = document.querySelectorAll("[id^='cert']");
+      animation_pop.forEach((element) => {
+        element.classList.add("cert-animation");
+      })
     }
     return;
 }
@@ -58,7 +60,7 @@ window.addEventListener("wheel", (event) => {
   if (isScrolling) return;  
   isScrolling = true;  
   if (event.deltaY > 0 && currentSectionIndex < sections.length - 1) {
-    event.preventDefault();
+    // event.preventDefault();
     $( document ).ready(async function() {
         deletesent("#sentence");
         await waitforMS(275);

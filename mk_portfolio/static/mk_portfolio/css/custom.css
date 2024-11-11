@@ -136,9 +136,34 @@ html, body {
 }
 
 .org {
-  background-color: rgb(128, 120, 120);
+  background-color: rgb(106, 102, 102);
   justify-content: center;
 }
 
+.cert {
+  margin-left: 150px;
+}
+.cert1 {
+  height: 280px;
+  width : 280px;
+  justify-content: center;
+  opacity: 0;
+  /* margin-left: 300px; */
+}
 
-#section3 {color: white; }
+.cert2 {
+  height: 280px;
+  width : 280px;
+  opacity: 0;
+  /* margin-right: 20px; */
+}
+
+.cert3 {
+  height: 270px;
+  width: 240px;
+  opacity: 0;
+}
+
+.cert-animation{
+  animation: fadeInUp 1.0s forwards;
+}

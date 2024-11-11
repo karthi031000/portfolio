@@ -6,10 +6,8 @@ class Job(models.Model):
     Job_title = models.CharField(max_length=200)
     years = models.CharField(max_length=200)
 
-class Project(models.Model):
-    Technology = models.CharField(max_length=200)
+class Certificate(models.Model):
     Title = models.CharField(max_length=200)
-    Description = models.CharField(max_length=500)
 
 class Skill(models.Model):
     Technology = models.CharField(max_length=200)
