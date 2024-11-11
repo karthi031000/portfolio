@@ -9,6 +9,7 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
         i++
     }
     if(currentSectionIndex === 1){
+      await waitforMS(delay)
       let animation_fade = document.querySelectorAll("[id^='fadein-']");
       animation_fade.forEach((element) => {
           element.classList.add("event-animation"); 
@@ -19,6 +20,7 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
       });
     }
     else if (currentSectionIndex === 2){
+      await waitforMS(delay)
       let animation_pop = document.querySelectorAll("[id^='cert']");
       animation_pop.forEach((element) => {
         element.classList.add("cert-animation");
