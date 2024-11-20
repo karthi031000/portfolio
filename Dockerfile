@@ -10,6 +10,4 @@ COPY . /app
 
 RUN python manage.py migrate
 
-RUN python manage.py collectstatic
-
 CMD python /app/manage.py runserver
