@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage("build"){
             steps {
-                sh "docker build Dockerfile -t karthi031000cit/portfolio:mk_portfolio"
+                sh "docker build -t karthi031000cit/portfolio:mk_portfolio ."
             }
         }
         stage("push"){
