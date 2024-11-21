@@ -9,6 +9,7 @@ pipeline{
         }
         stage("push"){
             steps {
+                sh "docker login -u ${env.docker_user} -p ${env.docker_pass}"
                 sh "docker push karthi031000cit/portfolio:mk_portfolio"
             }
         }
