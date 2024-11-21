@@ -15,7 +15,7 @@ pipeline{
         }
         stage("run"){
             steps {
-                sh "docker run karthi031000cit/portfolio:mk_portfolio"
+                sh "docker run -p 8081:8000 karthi031000cit/portfolio:mk_portfolio"
             }
         }
     }
