@@ -1,6 +1,6 @@
 let cmdlist = ["whoami", "history | grep jobs", "ls certificates", "unzip skills.zip"]
 
-async function typesent(text, elebyref, currentSectionIndex, delay=30) {
+async function typesent(text, elebyref, currentSectionIndex, delay=50) {
     var letters = text.split("");
     var i = 0;
     while(i < letters.length){
@@ -90,13 +90,13 @@ window.addEventListener("keydown", (event) => {
     if (isScrolling) return;  
     isScrolling = true;  
     if (event.key === 'ArrowDown' && currentSectionIndex < sections.length - 1) {
-        event.preventDefault(); 
+        // event.preventDefault(); 
       $( document ).ready(async function() {
           deletesent("#sentence");
           await waitforMS(250);
           scrollToSection(currentSectionIndex + 1);
           event.preventDefault();
-          typesent(cmdlist[currentSectionIndex], "#sentence")
+          typesent(cmdlist[currentSectionIndex], "#sentence", currentSectionIndex)
         });
     } else if (event.key === 'ArrowUp' && currentSectionIndex > 0) {
         event.preventDefault();
@@ -112,4 +112,3 @@ window.addEventListener("keydown", (event) => {
   
     setTimeout(() => isScrolling = false, 800);
   });
-
