@@ -1,6 +1,6 @@
-let cmdlist = ["whoami", "history | grep jobs", "ls certificates", "unzip skills.zip"]
+let cmdlist = ["whoami", "history | grep jobs", "ls certificates", "tar -xvf skills.tar"]
 
-async function typesent(text, elebyref, currentSectionIndex, delay=50) {
+async function typesent(text, elebyref, currentSectionIndex, delay=30) {
     var letters = text.split("");
     var i = 0;
     while(i < letters.length){
@@ -22,6 +22,13 @@ async function typesent(text, elebyref, currentSectionIndex, delay=50) {
     else if (currentSectionIndex === 2){
       await waitforMS(100)
       let animation_pop = document.querySelectorAll("[id^='cert']");
+      animation_pop.forEach((element) => {
+        element.classList.add("cert-animation");
+      })
+    }
+    else if (currentSectionIndex === 3){
+      await waitforMS(100)
+      let animation_pop = document.querySelectorAll(".skill");
       animation_pop.forEach((element) => {
         element.classList.add("cert-animation");
       })

@@ -1,12 +1,12 @@
 .square-box{
-   height: 100px;
-   width: 650px;
+   height: 90px;
+   width: 400px;
    border: 2px solid rgb(186, 181, 181);
    background-color: rgb(232, 226, 226);
    border-radius: 20px;
    z-index: 1000;
    max-width: 90%;
-   max-width: 350px;
+   /* max-width: 1000px; */
 }
 
 .image-border{
@@ -141,27 +141,25 @@ html, body {
 }
 
 .cert {
-  margin-left: 150px;
   margin-top: 90px;
 }
 .cert1 {
-  height: 280px;
-  width : 280px;
-  justify-content: center;
+  max-height: 340px;
+  max-width : 260px;
   opacity: 0;
   /* margin-left: 300px; */
 }
 
 .cert2 {
-  height: 280px;
-  width : 280px;
+  max-height: 340px;
+  max-width : 260px;
   opacity: 0;
   /* margin-right: 20px; */
 }
 
 .cert3 {
-  height: 270px;
-  width: 240px;
+  max-height: 300px;
+  max-width: 235px;
   opacity: 0;
 }
 
@@ -173,10 +171,24 @@ html, body {
   padding-left: 200px;
 }
 
+@media screen and (max-width: 767px){
+  .profile-pic {
+    height: 300px;
+    width: 300px;
+    margin-top: 100px;
+    margin-left: 10px;
+  }
+  .welcome-header {
+    margin-top: 1px;
+    font-size: 20px;
+  }
+}
+
 .welcome-header {
   font-size: 70px;
   font-family: Space Grotesk;
   line-height: 60px;
+  margin-top: 100px;
 }
 
 .welcome-foot {
@@ -211,4 +223,14 @@ html, body {
 
 .profile {
   animation: fadeInUp 1.0s forwards;
+}
+
+.skill {
+  opacity: 0;
+}
+
+.icon-name {
+  font-size: 20px;
+  color: white;
+  margin-top: 200px;
 }
