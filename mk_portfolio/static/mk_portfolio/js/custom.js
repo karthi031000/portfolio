@@ -1,4 +1,4 @@
-let cmdlist = ["whoami", "history | grep jobs", "ls certificates", "tar -xvf skills.tar"]
+let cmdlist = ["whoami", "history | grep jobs", "find -name \"projects\"", "tar -xvf skills.tar", "ls certificates"]
 
 async function typesent(text, elebyref, currentSectionIndex, delay=30) {
     var letters = text.split("");
@@ -29,6 +29,10 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
     else if (currentSectionIndex === 3){
       await waitforMS(100)
       let animation_pop = document.querySelectorAll(".skill");
+      animation_pop.forEach((element) => {
+        element.classList.add("skill-animation");
+      })
+      animation_pop = document.querySelectorAll(".icon-name");
       animation_pop.forEach((element) => {
         element.classList.add("skill-animation");
       })

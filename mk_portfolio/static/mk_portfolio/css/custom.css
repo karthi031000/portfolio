@@ -236,6 +236,7 @@ html, body {
   margin-top: 10px;
   font-size: 1rem;
   color: white;
+  opacity: 0;
   /* margin-right: 20px;
   padding-right: 15px; */
 }
@@ -250,7 +251,7 @@ html, body {
 
 
 .skill-animation {
-  animation: fadeInUp 2.0s forwards;
+  animation: fadeInUp 1.0s forwards;
 }
 
 .mr-skill {
