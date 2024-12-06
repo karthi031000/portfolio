@@ -81,13 +81,14 @@
     </section>
     <section class="section" id="section4">
       <div class="container-fluid">
-      <div class="row mb-3 justify-content-center">
-        <div class="col-md-7 justify-content-center">
+        <div class = "row justify-content-center mr-skill">
       {% for sk in skill %}
-      <i class="devicon-{{ sk }}-plain skill mx-5 mt-3" style="color: white; font-size: 50px;line-height: 100px;"></i>
-      <!-- <span class="icon-name">{{sk}}</span> -->
-      {% endfor %}
+      <div class="col-6 col-md-3 justify-content-center">
+      <i class="devicon-{{ sk }}-plain skill" style="color: white;"></i>
+      <p class="icon-name">{{sk}}</p>
       </div>
+      {% endfor %}
+  </div>
     </div>
   </div>
     </section>

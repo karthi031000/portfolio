@@ -30,7 +30,7 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
       await waitforMS(100)
       let animation_pop = document.querySelectorAll(".skill");
       animation_pop.forEach((element) => {
-        element.classList.add("cert-animation");
+        element.classList.add("skill-animation");
       })
     }
     return;
