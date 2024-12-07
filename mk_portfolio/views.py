@@ -17,5 +17,7 @@ def index(request):
     context.update({'grand' : grand_list})
     skill = list(Skill.objects.values_list("Technology", flat=True))
     context.update({'skill' : skill})
+    project = list(Project.objects.values_list("Project", flat=True))
+    context.update({'project' : project})
     print(context)
     return HttpResponse(template.render(context, request))

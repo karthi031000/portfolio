@@ -19,9 +19,16 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
           element.classList.add("circle-animation"); 
       });
     }
-    else if (currentSectionIndex === 2){
+    else if (currentSectionIndex === 4){
       await waitforMS(100)
       let animation_pop = document.querySelectorAll("[id^='cert']");
+      animation_pop.forEach((element) => {
+        element.classList.add("cert-animation");
+      })
+    }
+    else if (currentSectionIndex === 2){
+      await waitforMS(100)
+      let animation_pop = document.querySelectorAll(".card");
       animation_pop.forEach((element) => {
         element.classList.add("cert-animation");
       })

@@ -1,4 +1,4 @@
-let cmdlist = ["whoami", "history | grep jobs", "ls certificates", "unzip skills.zip"]
+let cmdlist = ["whoami", "history | grep jobs", "find -name \"projects\"", "tar -xvf skills.tar", "ls certificates"]
 
 async function typesent(text, elebyref, currentSectionIndex, delay=30) {
     var letters = text.split("");
@@ -24,6 +24,17 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
       let animation_pop = document.querySelectorAll("[id^='cert']");
       animation_pop.forEach((element) => {
         element.classList.add("cert-animation");
+      })
+    }
+    else if (currentSectionIndex === 3){
+      await waitforMS(100)
+      let animation_pop = document.querySelectorAll(".skill");
+      animation_pop.forEach((element) => {
+        element.classList.add("skill-animation");
+      })
+      animation_pop = document.querySelectorAll(".icon-name");
+      animation_pop.forEach((element) => {
+        element.classList.add("skill-animation");
       })
     }
     return;
@@ -90,13 +101,13 @@ window.addEventListener("keydown", (event) => {
     if (isScrolling) return;  
     isScrolling = true;  
     if (event.key === 'ArrowDown' && currentSectionIndex < sections.length - 1) {
-        event.preventDefault(); 
+        // event.preventDefault(); 
       $( document ).ready(async function() {
           deletesent("#sentence");
           await waitforMS(250);
           scrollToSection(currentSectionIndex + 1);
           event.preventDefault();
-          typesent(cmdlist[currentSectionIndex], "#sentence")
+          typesent(cmdlist[currentSectionIndex], "#sentence", currentSectionIndex)
         });
     } else if (event.key === 'ArrowUp' && currentSectionIndex > 0) {
         event.preventDefault();
@@ -112,4 +123,3 @@ window.addEventListener("keydown", (event) => {
   
     setTimeout(() => isScrolling = false, 800);
   });
-

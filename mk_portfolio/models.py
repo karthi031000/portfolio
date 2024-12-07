@@ -11,3 +11,6 @@ class Certificate(models.Model):
 
 class Skill(models.Model):
     Technology = models.CharField(max_length=200)
+
+class Project(models.Model):
+    Project = models.CharField(max_length=200)

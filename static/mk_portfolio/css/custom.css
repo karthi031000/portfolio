@@ -1,17 +1,23 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
 .square-box{
-   height: 100px;
-   width: 650px;
+   height: 90px;
+   width: 400px;
    border: 2px solid rgb(186, 181, 181);
    background-color: rgb(232, 226, 226);
    border-radius: 20px;
    z-index: 1000;
    max-width: 90%;
-   max-width: 350px;
+   /* max-width: 1000px; */
 }
 
 .image-border{
-    border-bottom: 2px solid rgb(170, 157, 157);
-    background-color: rgb(86, 81, 81);
+    border-bottom: 2px solid rgb(249, 178, 153);
+    background-color: rgba(249, 179, 153, 0.636);
     border-top-left-radius: 18px;
     border-top-right-radius: 18px;
     height: 30px;
@@ -33,7 +39,7 @@
     display: inline-block;
     width: 10px;
     height: 20px;
-    background-color: rgb(73, 70, 70);
+    background-color: rgb(248, 110, 110);
 }
 
 .align-row {
@@ -53,19 +59,15 @@
   animation: blink .6s linear infinite alternate;
 }
 
-html, body {
-    height: 100%;
-    overflow: hidden;
-  }
-
 .section {
-    height: 100vh;              /*Full viewport height*/
+    height: 100vh;             
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2em;
     color: black;
     font-family: sans-serif;
+    scroll-snap-align: start;
   }
 
   
@@ -114,7 +116,7 @@ html, body {
   .circle-animation {
     animation: pulse 1s infinite;
   }
-
+  
   @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -141,26 +143,25 @@ html, body {
 }
 
 .cert {
-  margin-left: 150px;
+  margin-top: 90px;
 }
 .cert1 {
-  height: 280px;
-  width : 280px;
-  justify-content: center;
+  max-height: 340px;
+  max-width : 260px;
   opacity: 0;
   /* margin-left: 300px; */
 }
 
 .cert2 {
-  height: 280px;
-  width : 280px;
+  max-height: 340px;
+  max-width : 260px;
   opacity: 0;
   /* margin-right: 20px; */
 }
 
 .cert3 {
-  height: 270px;
-  width: 240px;
+  max-height: 300px;
+  max-width: 235px;
   opacity: 0;
 }
 
@@ -168,18 +169,133 @@ html, body {
   animation: fadeInUp 1.0s forwards;
 }
 
-.welcome-header {
-  margin-top: 60px;
-  font-size: 200%;
-  font-family: Space Grotesk;
+.profile {
+  padding-left: 200px;
 }
 
-@font-face {
-  font-family: 'Pacifico';
-  src: url('../fonts/Pacifico-Regular.ttf') format('truetype');
+@media screen and (max-width: 767px){
+  .profile-pic {
+    height: 300px;
+    width: 300px;
+    margin-top: 100px;
+    margin-left: 10px;
+  }
+  .welcome-header {
+    margin-top: 1px;
+    font-size: 20px;
+  }
+}
+
+.welcome-header {
+  font-size: 70px;
+  font-family: Space Grotesk;
+  line-height: 60px;
+  margin-top: 100px;
+}
+
+.welcome-foot {
+  font-size: 32px;
+  line-height: 10px;
+  font-family: sans-serif;
 }
 
 
 .welcome {
-  font-family: 'Pacifico' cursive;
+  stroke:rgb(240, 162, 150);
+  stroke-width: 2;
+  stroke-dasharray: 1719.6107177734375;
+  stroke-dashoffset: 1719.6107177734375;
+  animation: write 4s forwards;
+}
+
+@keyframes write {
+  from {
+    fill: none;
+  }
+  to {
+    stroke-dashoffset: 0;
+    fill: rgb(244, 158, 144);
+  }
+}
+.welcome-desc {
+  line-height: 10px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.profile {
+  animation: fadeInUp 1.0s forwards;
+}
+
+.skill {
+  opacity: 0;
+  font-size: 3rem;
+}
+
+.icon-name {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: white;
+  opacity: 0;
+  /* margin-right: 20px;
+  padding-right: 15px; */
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 5px 0;
+}
+
+
+.skill-animation {
+  animation: fadeInUp 1.0s forwards;
+}
+
+.mr-skill {
+  margin-left: 80px;
+  margin-top: 30px;
+
+}
+
+@media (max-width: 768px) {
+  .skill {
+      font-size: 2.5rem;
+  }
+
+  .mr-skill {
+    margin-top: 100px;
+  }
+
+  .icon-name {
+      font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .skill {
+      font-size: 2rem;
+  }
+
+  .icon-name {
+      font-size: 0.75rem;
+      margin-top: 5px;
+  }
+  .mr-skill {
+    margin-left: 60px;
+  }
+}
+
+
+.card {
+  width: 18rem;
+  height: 20rem;
+  background-color: gray;
+  border-radius: 10px;
+}
+
+.card-text {
+  font-size: 25px;
 }
