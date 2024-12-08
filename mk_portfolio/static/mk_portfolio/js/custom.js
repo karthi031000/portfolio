@@ -2,7 +2,7 @@ let cmdlist = ["whoami", "history | grep jobs", "locate projects", "tar -xf skil
 
 window.addEventListener('load', function() {
   document.body.classList.add('loaded');
-});
+}, 1000);
 
 async function typesent(text, elebyref, currentSectionIndex, delay=30) {
     var letters = text.split("");
