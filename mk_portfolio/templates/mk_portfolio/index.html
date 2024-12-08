@@ -75,13 +75,13 @@
     <section class="section" id="section3">
       <div class="container-fluid">
         <div class="row card-row">
-            {% for pr in project %}
+            {% for pr, desc in project %}
             <div class="col-md-4 col-sm-6">
         <div class="card">
           <img class="card-img-top" src="/static/mk_portfolio/{{ pr }}.jpg">
           <div class="card-body">
             <p class="card-text">{{ pr }}</p>
-            <p class="card-text"> test </p>
+            <p class="card-text"> {{desc}} </p>
             <div class="stacks">
                <img src="/static/mk_portfolio/{{pr}}1.png" class="stack">
                <img src="/static/mk_portfolio/{{pr}}2.png" class="stack">

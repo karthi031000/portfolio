@@ -14,3 +14,4 @@ class Skill(models.Model):
 
 class Project(models.Model):
     Project = models.CharField(max_length=200)
+    Description = models.CharField(max_length=200)
