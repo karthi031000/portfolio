@@ -1,5 +1,9 @@
 let cmdlist = ["whoami", "history | grep jobs", "locate projects", "tar -xf skills.tar", "ls certificates"]
 
+window.addEventListener('load', function() {
+  document.body.classList.add('loaded');
+});
+
 async function typesent(text, elebyref, currentSectionIndex, delay=30) {
     var letters = text.split("");
     var i = 0;
