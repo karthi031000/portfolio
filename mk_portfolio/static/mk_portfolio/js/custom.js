@@ -1,4 +1,4 @@
-let cmdlist = ["whoami", "history | grep jobs", "find -name \"projects\"", "tar -xvf skills.tar", "ls certificates"]
+let cmdlist = ["whoami", "history | grep jobs", "locate projects", "tar -xf skills.tar", "ls certificates"]
 
 async function typesent(text, elebyref, currentSectionIndex, delay=30) {
     var letters = text.split("");
