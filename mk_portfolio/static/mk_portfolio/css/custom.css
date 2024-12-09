@@ -190,7 +190,7 @@ body.loaded #preloader {
 }
 
 .profile {
-  padding-left: 80px;
+  padding-left: 50px;
 }
 
 @media screen and (max-width: 767px){
@@ -312,7 +312,7 @@ body.loaded #preloader {
 .card {
   width: 18rem;
   height: 23rem;
-  background-color: rgb(20, 18, 18);
+  background-color: rgb(12, 12, 12);
   border-radius: 30px;
   margin-top: 70px;
   margin-left: 70px;
@@ -336,7 +336,7 @@ body.loaded #preloader {
   .card {
     width: 10rem;
     height: 14rem;
-    background-color: rgb(20, 18, 18);
+    background-color: rgb(12, 12, 12);
     border-radius: 30px;
     margin-top: 45px;
     margin-left: 90px;
