@@ -22,6 +22,8 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
       animation_pulse.forEach((element) => {
           element.classList.add("circle-animation"); 
       });
+      let scroll = document.getElementById("scroll")
+      scroll.classList.remove("scroller");
     }
     else if (currentSectionIndex === 4){
       await waitforMS(100)
@@ -29,6 +31,8 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
       animation_pop.forEach((element) => {
         element.classList.add("cert-animation");
       })
+      let scroll = document.getElementById("scroll")
+      scroll.classList.add("scroller");
     }
     else if (currentSectionIndex === 2){
       await waitforMS(100)
@@ -36,6 +40,8 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
       animation_pop.forEach((element) => {
         element.classList.add("cert-animation");
       })
+      let scroll = document.getElementById("scroll")
+      scroll.classList.remove("scroller");
     }
     else if (currentSectionIndex === 3){
       await waitforMS(100)
@@ -47,6 +53,8 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
       animation_pop.forEach((element) => {
         element.classList.add("skill-animation");
       })
+      let scroll = document.getElementById("scroll")
+      scroll.classList.remove("scroller");
     }
     return;
 }
@@ -134,3 +142,37 @@ window.addEventListener("keydown", (event) => {
   
     setTimeout(() => isScrolling = false, 800);
   });
+
+
+  let startY = 0;
+
+window.addEventListener("touchstart", (event) => {
+    startY = event.touches[0].clientY;
+});
+
+window.addEventListener("touchmove", (event) => {
+    if (isScrolling) return;
+
+    const touchY = event.touches[0].clientY;
+    const deltaY = touchY - startY;
+
+    if (deltaY < 0 && currentSectionIndex < sections.length - 1) {
+        isScrolling = true;
+        deletesent("#sentence");
+        setTimeout(async () => {
+            scrollToSection(currentSectionIndex + 1);
+            await waitforMS(275);
+            typesent(cmdlist[currentSectionIndex], "#sentence", currentSectionIndex);
+            isScrolling = false;
+        }, 275);
+    } else if (deltaY > 0 && currentSectionIndex > 0) {
+        isScrolling = true;
+        deletesent("#sentence");
+        setTimeout(async () => {
+            scrollToSection(currentSectionIndex - 1);
+            await waitforMS(275);
+            typesent(cmdlist[currentSectionIndex], "#sentence");
+            isScrolling = false;
+        }, 275);
+    }
+});

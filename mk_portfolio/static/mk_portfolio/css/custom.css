@@ -197,7 +197,7 @@ body.loaded #preloader {
   .profile-pic {
     height: 300px;
     width: 300px;
-    margin-top: 100px;
+    margin-top: 70px;
     /* margin-left: 1px; */
   }
   .welcome-header {
@@ -390,4 +390,21 @@ body.loaded #preloader {
   column-gap: .75rem;
   border-radius: 4rem;
   margin-bottom: 1.5rem;
+}
+
+.scroller {
+  opacity:0
+}
+#scroll {
+  animation: bounce 1.0s infinite;
+}
+
+@keyframes bounce {
+from {
+  transform: translate3d(0, 0, 0);
+}
+
+to {
+  transform: translate3d(0, 15px, 0);
+}
 }
