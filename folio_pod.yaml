@@ -1,0 +1,12 @@
+apiVersion: V1
+kind: Pod
+metadata:
+  name: portfolio-pod
+  labels:
+    name: portfolio-pod
+    app: portfolio-app
+spec:
+  containers:
+    - name: karthi031000cit/portfolio:mk_portfolio
+      ports:
+        - containerPort: 80

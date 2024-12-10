@@ -1,0 +1,24 @@
+apiVersion: apps/V1
+kind: Deployment
+metadata:
+  name: portfolio-deploy
+  labels:
+    name: portfolio-deploy
+    app: portfolio-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: portfolio-pod
+      app: portfolio-app
+  template:
+    metadata:
+      name: portfolio-pod
+      labels:
+        name: portfolio-pod
+        app: portfolio-app
+    spec:
+      containers:
+        - name: karthi031000cit/portfolio:mk_portfolio
+          ports:
+            - containerPort: 80
