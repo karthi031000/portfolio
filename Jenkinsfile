@@ -4,18 +4,18 @@ pipeline{
     stages{
         stage("build"){
             steps {
-                sh "docker build -t karthi031000cit/portfolio:mk_portfolio ."
+                sh "docker build -t karthi031000cit/portfolio:mkportfolio ."
             }
         }
         stage("push"){
             steps {
                 sh "docker login -u ${env.docker_user} -p ${env.docker_pass}"
-                sh "docker push karthi031000cit/portfolio:mk_portfolio"
+                sh "docker push karthi031000cit/portfolio:mkportfolio"
             }
         }
         stage("run"){
             steps {
-                sh "docker run -d -p 8081:80 karthi031000cit/portfolio:mk_portfolio"
+                sh "docker run -d -p 8081:80 karthi031000cit/portfolio:mkportfolio"
             }
         }
     }

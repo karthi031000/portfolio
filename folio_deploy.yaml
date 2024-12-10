@@ -19,6 +19,6 @@ spec:
         app: portfolio-app
     spec:
       containers:
-        - name: karthi031000cit/portfolio:mk_portfolio
+        - name: karthi031000cit/portfolio:mkportfolio
           ports:
             - containerPort: 80
