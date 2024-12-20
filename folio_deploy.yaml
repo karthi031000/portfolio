@@ -22,6 +22,6 @@ spec:
         - name: portfolio-app
           image: karthi031000cit/portfolio:v1
           ports:
-            - containerPort: 80
+            - containerPort: 8080
       imagePullSecrets:
         - name: docker-secret
