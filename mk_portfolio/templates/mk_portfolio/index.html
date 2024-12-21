@@ -50,9 +50,9 @@
                     </defs>
                   </svg>
                   </span><br>
-                  <span class = "welcome-foot fs-md-1 fs-sm-4">I'm Karthikeyan Murugan, a passionate DevOps enthusiast.<br> </span>
-                  <span class = "welcome-desc fs-md-1 fs-sm-4">Technical Analyst with 3.5 years of experience in managing Middleware Technologies.</span><br>
-                  <span class = "welcome-desc fs-md-1 fs-sm-4">Chennai, India.</span>
+                  <div class = "welcome-foot">I'm Karthikeyan Murugan, a passionate DevOps enthusiast.<br> </div>
+                  <div class = "welcome-desc">Technical Analyst with 3.5 years of experience in managing Middleware Technologies.</div><br>
+                  <div class = "welcome-place">Chennai, India.</div>
                 </div>
           </div>
           <div class="row position-absolute bottom-0 end-0" id="scroll">
@@ -103,10 +103,10 @@
       </div>
     </section>
     <section class="section" id="section4">
-      <div class="container-fluid">
+      <div class="container">
         <div class = "row justify-content-center mr-skill">
       {% for sk in skill %}
-      <div class="col-6 col-md-3 justify-content-center">
+      <div class="col-6 col-md-3 col-sm-2 justify-content-center col-skill">
       <i class="devicon-{{ sk }}-plain skill" style="color: white;"></i>
       <p class="icon-name">{{sk}}</p>
       </div>

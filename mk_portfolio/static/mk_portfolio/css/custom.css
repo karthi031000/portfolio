@@ -185,6 +185,29 @@ body.loaded #preloader {
   opacity: 0;
 }
 
+@media (max-width: 920px) {
+  .cert1 {
+    max-height: 150px;
+    max-width : 180px;
+    opacity: 0;
+    /* margin-left: 300px; */
+  }
+  
+  .cert2 {
+    max-height: 150px;
+    max-width : 175px;
+    opacity: 0;
+    /* margin-right: 20px; */
+  }
+  
+  .cert3 {
+    max-height: 150px;
+    max-width : 160px;
+    opacity: 0;
+  }
+}
+
+
 .cert-animation{
   animation: fadeInUp 1.0s forwards;
 }
@@ -193,29 +216,50 @@ body.loaded #preloader {
   padding-left: 50px;
 }
 
-@media screen and (max-width: 767px){
+@media (max-width: 940px){
   .profile-pic {
-    height: 300px;
-    width: 300px;
-    margin-top: 70px;
+    height: 270px;
+    width: 270px;
+    margin-top: 50px;
     /* margin-left: 1px; */
   }
   .welcome-header {
     margin-top: 1px;
-    font-size: 20px;
+    font-size: 50px !important;
+    line-height: 50px !important;
   }
+  .welcome-foot {
+    font-size: 20px !important;
+    line-height: 30px !important;
+    font-family: sans-serif;
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+  }
+  .welcome-desc {
+    line-height: 30px !important;
+    font-size: 20px !important;
+    font-family: sans-serif;
+    margin-bottom: -25px !important;
+  }
+  
+  .welcome-place {
+    line-height: 30px !important;
+    font-size: 20px !important;
+    font-family: sans-serif;
+  }
+
 }
 
 .welcome-header {
   font-size: 70px;
   font-family: Space Grotesk;
-  line-height: 60px;
+  line-height: 100px;
   margin-top: 100px;
 }
 
 .welcome-foot {
   font-size: 32px;
-  line-height: 10px;
+  line-height: 70px;
   font-family: sans-serif;
 }
 
@@ -238,6 +282,12 @@ body.loaded #preloader {
   }
 }
 .welcome-desc {
+  line-height: 10px;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.welcome-place {
   line-height: 10px;
   font-size: 20px;
   font-family: sans-serif;
@@ -280,13 +330,16 @@ body.loaded #preloader {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 915px) {
   .skill {
-      font-size: 2.5rem;
+      font-size: 1rem !important;
   }
 
   .mr-skill {
-    margin-top: 100px;
+    margin-top: 100px !important;
+  }
+  .col-skill {
+    margin-top: -10px !important;
   }
 
   .icon-name {
@@ -332,37 +385,37 @@ body.loaded #preloader {
   transition: transform .4s;
 }
 
-@media (max-width:576px) {
+@media (max-width:915px) {
   .card {
-    width: 10rem;
-    height: 14rem;
+    width: 9rem;
+    height: 11.8rem;
     background-color: rgb(12, 12, 12);
     border-radius: 30px;
-    margin-top: 45px;
+    margin-top: 25px;
     margin-left: 90px;
     opacity: 0;
   }
   
   .card-text {
-    font-size: 15px;
+    font-size: 11px;
     color: white;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   
   .card-img-top {
-    height: 100px;
+    height: 75px;
     padding: 10px;
     border-radius: 30px;
     transition: transform .4s;
   }
   .card-row {
-    margin-top: 40px;
+    margin-top: 70px;
   }
   .card-body {
-    padding-top: 2px;
+    padding-top: 1px;
   }
   .stacks {
-    margin-top: 0.5px;
+    margin-top: 0.1px;
   }
 }
 
