@@ -261,6 +261,8 @@ body.loaded #preloader {
   font-size: 32px;
   line-height: 70px;
   font-family: sans-serif;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 
@@ -282,13 +284,13 @@ body.loaded #preloader {
   }
 }
 .welcome-desc {
-  line-height: 10px;
+  line-height: 30px;
   font-size: 20px;
   font-family: sans-serif;
 }
 
 .welcome-place {
-  line-height: 10px;
+  line-height: 30px;
   font-size: 20px;
   font-family: sans-serif;
 }
