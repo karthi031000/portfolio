@@ -492,3 +492,23 @@ to {
   transform: translate3d(0, 15px, 0);
 }
 }
+
+.contacts1 {
+  font-size: 80px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contacts1:hover {
+  box-shadow: 0 0 20px 5px white;
+  transform: scale(1.05);
+}
+
+.contacts2 {
+  font-size: 80px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.contacts2:hover {
+  box-shadow: 0 0 20px 5px white;
+  transform: scale(1.05);
+}

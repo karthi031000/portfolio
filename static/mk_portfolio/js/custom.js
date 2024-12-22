@@ -1,4 +1,8 @@
-let cmdlist = ["whoami", "history | grep jobs", "find -name \"projects\"", "tar -xvf skills.tar", "ls certificates"]
+let cmdlist = ["whoami", "history | grep jobs", "locate projects", "tar -xf skills.tar", "ls certificates", "cat contacts.txt"]
+
+window.addEventListener('load', function() {
+  document.body.classList.add('loaded');
+}, 1000);
 
 async function typesent(text, elebyref, currentSectionIndex, delay=30) {
     var letters = text.split("");
@@ -18,13 +22,26 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
       animation_pulse.forEach((element) => {
           element.classList.add("circle-animation"); 
       });
+      let scroll = document.getElementById("scroll")
+      scroll.classList.remove("scroller");
     }
-    else if (currentSectionIndex === 2){
+    else if (currentSectionIndex === 4){
       await waitforMS(100)
       let animation_pop = document.querySelectorAll("[id^='cert']");
       animation_pop.forEach((element) => {
         element.classList.add("cert-animation");
       })
+      let scroll = document.getElementById("scroll")
+      scroll.classList.remove("scroller");
+    }
+    else if (currentSectionIndex === 2){
+      await waitforMS(100)
+      let animation_pop = document.querySelectorAll(".card");
+      animation_pop.forEach((element) => {
+        element.classList.add("cert-animation");
+      })
+      let scroll = document.getElementById("scroll")
+      scroll.classList.remove("scroller");
     }
     else if (currentSectionIndex === 3){
       await waitforMS(100)
@@ -36,6 +53,12 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
       animation_pop.forEach((element) => {
         element.classList.add("skill-animation");
       })
+      let scroll = document.getElementById("scroll")
+      scroll.classList.remove("scroller");
+    }
+    else if (currentSectionIndex === 5){
+      let scroll = document.getElementById("scroll")
+      scroll.classList.add("scroller");
     }
     return;
 }
@@ -123,3 +146,36 @@ window.addEventListener("keydown", (event) => {
   
     setTimeout(() => isScrolling = false, 800);
   });
+
+
+  let startY = 0;
+
+window.addEventListener("touchstart", (event) => {
+    startY = event.touches[0].clientY;
+});
+
+window.addEventListener("touchmove", (event) => {
+    if (isScrolling) return;
+    isScrolling = true;
+    const touchY = event.touches[0].clientY;
+    const deltaY = touchY - startY;
+    if (deltaY < 0 && currentSectionIndex < sections.length - 1) {
+        $( document ).ready(async function() {
+            deletesent("#sentence");
+            await waitforMS(275);
+            scrollToSection(currentSectionIndex + 1);
+            event.preventDefault();
+            typesent(cmdlist[currentSectionIndex], "#sentence", currentSectionIndex);
+        });
+    } else if (deltaY > 0 && currentSectionIndex > 0) {
+        event.preventDefault();
+        $( document ).ready(async function() {
+            deletesent("#sentence");
+            await waitforMS(275);
+            scrollToSection(currentSectionIndex - 1);
+            event.preventDefault();
+            typesent(cmdlist[currentSectionIndex], "#sentence");
+        });
+    }
+    setTimeout(() => isScrolling = false, 800);
+}, { passive: false });

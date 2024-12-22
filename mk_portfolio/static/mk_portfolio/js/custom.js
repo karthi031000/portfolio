@@ -1,4 +1,4 @@
-let cmdlist = ["whoami", "history | grep jobs", "locate projects", "tar -xf skills.tar", "ls certificates"]
+let cmdlist = ["whoami", "history | grep jobs", "locate projects", "tar -xf skills.tar", "ls certificates", "cat contacts.txt"]
 
 window.addEventListener('load', function() {
   document.body.classList.add('loaded');
@@ -32,7 +32,7 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
         element.classList.add("cert-animation");
       })
       let scroll = document.getElementById("scroll")
-      scroll.classList.add("scroller");
+      scroll.classList.remove("scroller");
     }
     else if (currentSectionIndex === 2){
       await waitforMS(100)
@@ -55,6 +55,10 @@ async function typesent(text, elebyref, currentSectionIndex, delay=30) {
       })
       let scroll = document.getElementById("scroll")
       scroll.classList.remove("scroller");
+    }
+    else if (currentSectionIndex === 5){
+      let scroll = document.getElementById("scroll")
+      scroll.classList.add("scroller");
     }
     return;
 }
