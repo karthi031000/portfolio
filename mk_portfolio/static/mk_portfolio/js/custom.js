@@ -152,27 +152,26 @@ window.addEventListener("touchstart", (event) => {
 
 window.addEventListener("touchmove", (event) => {
     if (isScrolling) return;
-
+    isScrolling = true;
     const touchY = event.touches[0].clientY;
     const deltaY = touchY - startY;
-
     if (deltaY < 0 && currentSectionIndex < sections.length - 1) {
-        isScrolling = true;
-        deletesent("#sentence");
-        setTimeout(async () => {
+        $( document ).ready(async function() {
+            deletesent("#sentence");
+            await waitforMS(275);
             scrollToSection(currentSectionIndex + 1);
-            await waitforMS(275);
+            event.preventDefault();
             typesent(cmdlist[currentSectionIndex], "#sentence", currentSectionIndex);
-            isScrolling = false;
-        }, 275);
+        });
     } else if (deltaY > 0 && currentSectionIndex > 0) {
-        isScrolling = true;
-        deletesent("#sentence");
-        setTimeout(async () => {
-            scrollToSection(currentSectionIndex - 1);
+        event.preventDefault();
+        $( document ).ready(async function() {
+            deletesent("#sentence");
             await waitforMS(275);
+            scrollToSection(currentSectionIndex - 1);
+            event.preventDefault();
             typesent(cmdlist[currentSectionIndex], "#sentence");
-            isScrolling = false;
-        }, 275);
+        });
     }
-});
+    setTimeout(() => isScrolling = false, 800);
+}, { passive: false });

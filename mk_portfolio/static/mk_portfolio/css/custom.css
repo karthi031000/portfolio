@@ -1,9 +1,35 @@
 html, body {
   height: 100%;
-  overflow: hidden;
+  overflow:hidden;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
+@media (max-width:920px) {
+  html, body {
+    height: 100vh;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+  }
+  .section {
+    height: 100vh;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.snapy {
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+}
+}
 #preloader {
   position: fixed;
   top: 0;
@@ -88,6 +114,9 @@ body.loaded #preloader {
     color: black;
     font-family: sans-serif;
     scroll-snap-align: start;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
   }
 
   
@@ -338,7 +367,7 @@ body.loaded #preloader {
   }
 
   .mr-skill {
-    margin-top: 100px !important;
+    margin-top: 90px !important;
   }
   .col-skill {
     margin-top: -10px !important;
@@ -411,7 +440,7 @@ body.loaded #preloader {
     transition: transform .4s;
   }
   .card-row {
-    margin-top: 70px;
+    margin-top: 60px;
   }
   .card-body {
     padding-top: 1px;
