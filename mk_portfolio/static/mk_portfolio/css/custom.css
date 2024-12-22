@@ -250,6 +250,7 @@ body.loaded #preloader {
     height: 270px;
     width: 270px;
     margin-top: 50px;
+    margin-bottom: 20px;
     /* margin-left: 1px; */
   }
   .welcome-header {
@@ -440,7 +441,7 @@ body.loaded #preloader {
     transition: transform .4s;
   }
   .card-row {
-    margin-top: 60px;
+    margin-top: 40px;
   }
   .card-body {
     padding-top: 1px;
